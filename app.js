@@ -6,6 +6,8 @@ const mongoose = require('mongoose')
 const json = require('koa-json')
 const Task = require('./models/Task')
 
+const port = process.env.PORT || 3000
+
 //Create Db Connection
 mongoose.connect(process.env.DB_URL, {
     useNewUrlParser: true,
@@ -44,4 +46,4 @@ app.use(ctx => {
     }
 })
 
-app.listen(3000)
+app.listen(port)
