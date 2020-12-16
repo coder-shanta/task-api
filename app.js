@@ -28,7 +28,10 @@ const koaBody = require('koa-body')
 
 const app = new Koa()
 
-app.use(json()).use(KoaBody())
+app.use(json({
+    pretty: false,
+    param: 'pretty'
+})).use(KoaBody())
 
 
 
